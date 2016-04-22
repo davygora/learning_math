@@ -1,9 +1,12 @@
   <div class="header clearfix">
     <nav>
       <ul class="nav nav-pills pull-right">
-        <li role="presentation"><%= active_link_to 'Home', controller: "welcome", action: "index"%>
-        <li role="presentation"><%= active_link_to 'About', controller: "welcome", action: "about" %>
-        <li role="presentation"><%= active_link_to 'Contact', controller: "welcome", action: "contact" %>
+        <li role="presentation"><%= active_link_to 'Головна', controller: "welcome", action: "index"%>
+        <li role="presentation"><%= active_link_to 'Про нас', controller: "welcome", action: "about" %>
+        <li role="presentation"><%= active_link_to 'Контакти', controller: "welcome", action: "contact" %>
+        <% if current_user %>
+          <li role="presentation"><%= link_to 'Вихід', destroy_user_session_path, method: :delete %>
+        <% end %>
       </ul>
     </nav>
     <h3 class="text-muted">Learning Math</h3>
