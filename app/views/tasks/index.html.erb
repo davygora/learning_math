@@ -1,0 +1,18 @@
+<%= render 'shared/navbar_for_user' %>
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+<div class="panel-heading"><h3>Список навчальних матеріалів</h3></div>
+<table class="table">
+    <tr>
+      <th>Назва лекційного маетріалу</th>
+      <th>Автор</th>
+    </tr>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to "#{task.title}", task %></td>
+        <td>Викладач</td>
+      </tr>
+    <% end %>
+</table>
+</div>
+<br>
